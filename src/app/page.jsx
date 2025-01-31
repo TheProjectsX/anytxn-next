@@ -1,7 +1,46 @@
+"use client";
+
+import CountUp from "react-countup";
+
 const Home = () => {
     return (
         <div>
             <section className="container max-width mx-auto">
+                <div>
+                    <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-8">
+                        Trusted by the best
+                    </h2>
+
+                    <div className="flex flex-col lg:flex-row justify-between xl:px-20 mb-10 md:mb-14 lg:mb-28">
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                &gt;
+                                <CountUp end={20} />
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Years of Experience
+                            </p>
+                        </div>
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                <CountUp end={40} />+
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Financial Institutions
+                            </p>
+                        </div>
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                &gt;
+                                <CountUp end={200} />m
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Customers Each
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="hidden md:grid grid-cols-3 gap-x-16 gap-y-[34px] lg:grid-cols-5">
                     {[
                         "/partners/1.png",

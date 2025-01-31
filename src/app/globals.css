@@ -3,6 +3,9 @@
 .max-width {
     @media (width >= 80rem /* 1280px */) {
         max-width: 1200px !important;
+    }
+
+    @media (width >= 64rem /* 1280px */) {
         padding-inline: 25px;
     }
 }
