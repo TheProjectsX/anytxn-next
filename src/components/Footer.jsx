@@ -65,7 +65,7 @@ const Footer = () => {
                 <div className="absolute w-full h-full bg-[url('/backgrounds/ctaMobileWaveLines.svg')] bg-no-repeat bg-cover bg-center"></div>
 
                 <div className="absolute h-full w-full flex items-center justify-center md:pl-20">
-                    <div className="container">
+                    <div className="container max-width">
                         <h3 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white lg:text-head-2 font-semibold mb-[24px] z-[11] relative">
                             Legacy no longer
                         </h3>
@@ -86,7 +86,7 @@ const Footer = () => {
 
             <footer className="">
                 <div className="bg-[#002045] border-b border-[#164377] lg:px-14">
-                    <div className="container mx-auto flex justify-between py-11">
+                    <div className="container max-width mx-auto flex justify-between py-11">
                         <img src="/logo.svg" alt="AnyTech Logo" />
 
                         {/* Smaller Devices */}
@@ -132,7 +132,7 @@ const Footer = () => {
                 </div>
 
                 <div className="bg-[#00152D] lg:px-14">
-                    <div className="container mx-auto text-[#1f80f0] py-8 flex gap-4 flex-col items-center lg:flex-row lg:justify-between text-xs">
+                    <div className="container max-width mx-auto text-[#1f80f0] py-8 flex gap-4 flex-col items-center lg:flex-row lg:justify-between text-xs">
                         <p className="">
                             <span className="font-semibold">
                                 &copy; 2023 All rights reserved

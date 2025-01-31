@@ -28,7 +28,7 @@ const Navbar = () => {
                         : "bg-transparent text-white"
                 }`}
             >
-                <div className="container px-10 flex items-center justify-between gap-5 pt-5 pb-6 font-inter">
+                <div className="container max-width px-10 flex items-center justify-between gap-5 pt-5 pb-6 font-inter">
                     <a href="/">
                         <img
                             src={
@@ -169,7 +169,7 @@ const Navbar = () => {
                 }`}
             >
                 <div className="bg-[#1f80f0] flex justify-center">
-                    <div className="container px-10 py-7 flex items-center justify-between">
+                    <div className=" max-width px-10 py-7 flex items-center justify-between">
                         <img
                             src="/logo.svg"
                             alt="AnyTech Logo"

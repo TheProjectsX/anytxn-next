@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <div>
-            <section className="container mx-auto">
+            <section className="container max-width mx-auto">
                 <div className="hidden md:grid grid-cols-3 gap-x-16 gap-y-[34px] lg:grid-cols-5">
                     {[
                         "/partners/1.png",
