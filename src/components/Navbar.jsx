@@ -168,8 +168,8 @@ const Navbar = () => {
                         : "fixed -top-25"
                 }`}
             >
-                <div className="bg-[#1f80f0] flex justify-center">
-                    <div className=" max-width px-10 py-7 flex items-center justify-between">
+                <div className="bg-[#1f80f0] flex ">
+                    <div className="container mx-auto max-width px-10 py-7 flex items-center justify-between">
                         <img
                             src="/logo.svg"
                             alt="AnyTech Logo"

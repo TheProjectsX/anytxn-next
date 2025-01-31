@@ -42,3 +42,13 @@
     -webkit-mask-image: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
     mask-image: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
 }
+
+/* Class to hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
