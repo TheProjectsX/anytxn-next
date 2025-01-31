@@ -18,6 +18,7 @@ const Navbar = () => {
 
     return (
         <>
+            {/* For larger Devices */}
             <header
                 className={`hidden lg:flex z-[999] fixed w-full justify-center transition-all duration-300 ease-in-out ${
                     scrollingUp ? "top-0" : "-top-25"
@@ -157,9 +158,9 @@ const Navbar = () => {
                     </button>
                 </div>
             </header>
-
+            {/* For Smaller Devices */}
             <header className="lg:hidden">
-                <div className="bg-[#2e8bf5] flex justify-center">
+                <div className="bg-[#1f80f0] flex justify-center">
                     <div className="container px-10 py-7 flex items-center justify-between">
                         <img
                             src="/logo.svg"
@@ -176,7 +177,7 @@ const Navbar = () => {
                 </div>
 
                 <nav
-                    className={`bg-[#217ef0] text-white p-8 w-full text-sm absolute transition-transform duration-300 ${
+                    className={`bg-[#1b76e9] text-white p-8 w-full text-sm absolute transition-transform duration-300 ${
                         menuOpened ? "translate-x-0" : "translate-x-[-100%]"
                     }`}
                 >
