@@ -159,7 +159,15 @@ const Navbar = () => {
                 </div>
             </header>
             {/* For Smaller Devices */}
-            <header className="lg:hidden">
+            <header
+                className={`lg:hidden w-full transition-all duration-300 ease-in-out ${
+                    scrollingUp
+                        ? scrollPercentage > 13
+                            ? "fixed top-0"
+                            : "static"
+                        : "fixed -top-25"
+                }`}
+            >
                 <div className="bg-[#1f80f0] flex justify-center">
                     <div className="container px-10 py-7 flex items-center justify-between">
                         <img
