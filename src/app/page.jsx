@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import CountUp from "react-countup";
+import OurPhilosophyLarge from "@/assets/images/our_philosophy_large.png";
+import OurPhilosophySmall from "@/assets/images/our_philosophy_small.png";
 
-/**
- https://cdn.sanity.io/images/6jywt20u/production/56e02fe1cf2f41ff52aebe65d2e1466e93a9581b-6400x4800.jpg?auto=format
- https://cdn.sanity.io/images/6jywt20u/production/2b48e3b3fe95abd21ff8cb659f26ca05d91e9ef7-1509x1284.png?auto=format
- https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg?auto=format
- */
+import { PiShareNetworkFill } from "react-icons/pi";
+import { FaLightbulb } from "react-icons/fa";
+import { FaMicrochip } from "react-icons/fa6";
 
 const Home = () => {
     const box1Ref = useRef(null);
@@ -25,6 +25,72 @@ const Home = () => {
 
     return (
         <div className="space-y-20">
+            {/* Our Philosophy */}
+            <section className="container max-width mx-auto">
+                <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
+                    Our Philosophy
+                </h2>
+                <h3 className="whitespace-pre-line font-montserrat text-center text-[#0b305b] text-xl sm:text-2xl md:text-4xl lg:text-6xl font-semibold mb-10">
+                    Human-centred innovation
+                </h3>
+
+                <div className="mb-6">
+                    <img
+                        src={OurPhilosophyLarge.src}
+                        alt="Our Philosophy"
+                        className="hidden md:block"
+                    />
+                    <img
+                        src={OurPhilosophySmall.src}
+                        alt="Our Philosophy"
+                        className="md:hidden"
+                    />
+                </div>
+                {/* #e9f3ff  #d6f8f8  #ffe1d5 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                        <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
+                            <PiShareNetworkFill />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Full-suite solutions
+                        </h4>
+                        <p className="text-[#0b305b]">
+                            Experience the ease of integration across various
+                            banking and payment functions with our comprehensive
+                            suite of solutions.
+                        </p>
+                    </div>
+
+                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                        <p className="mb-6 bg-[#d6f8f8] rounded-full p-2 lg:p-3 w-fit text-xl">
+                            <FaLightbulb />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Simplify the complex
+                        </h4>
+                        <p className="text-[#0b305b]">
+                            Simplify complex processes and optimize your
+                            financial operations by leveraging the power of AI,
+                            Blockchain, Cloud Computing, and Big Data.
+                        </p>
+                    </div>
+                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                        <p className="mb-6 bg-[#ffe1d5] rounded-full p-2 lg:p-3 w-fit text-xl">
+                            <FaMicrochip />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Cutting-edge tech
+                        </h4>
+                        <p className="text-[#0b305b]">
+                            We seamlessly combine cutting-edge technologies,
+                            resulting in an unparalleled fin tech experience for
+                            financial institutions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Technology built for you */}
             <section className="container max-width mx-auto">
                 <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
@@ -92,8 +158,8 @@ const Home = () => {
                             </div>
                             <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
-                                    src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
-                                    alt=""
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/c0be857dbe1878b1866b6bd0ddda7945d0f2779b-3672x2712.jpg"
+                                    alt="Image"
                                     className="h-full w-full object-cover"
                                 />
                             </div>
@@ -130,8 +196,8 @@ const Home = () => {
                             </div>
                             <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
-                                    src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
-                                    alt=""
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/56e02fe1cf2f41ff52aebe65d2e1466e93a9581b-6400x4800.jpg"
+                                    alt="Image"
                                     className="h-full w-full object-cover"
                                 />
                             </div>
@@ -167,8 +233,8 @@ const Home = () => {
                             </div>
                             <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
-                                    src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
-                                    alt=""
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/2b48e3b3fe95abd21ff8cb659f26ca05d91e9ef7-1509x1284.png"
+                                    alt="Image"
                                     className="h-full w-full object-cover"
                                 />
                             </div>

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 .max-width {
+    padding-inline: 20px;
+
     @media (width >= 80rem /* 1280px */) {
         max-width: 1200px !important;
     }
