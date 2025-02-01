@@ -168,7 +168,7 @@ const Navbar = () => {
                         : "fixed -top-25"
                 }`}
             >
-                <div className="bg-[#1f80f0] flex ">
+                <div className="bg-[#1f80f0] flex">
                     <div className="container mx-auto max-width px-10 py-7 flex items-center justify-between">
                         <img
                             src="/logo.svg"
@@ -185,7 +185,7 @@ const Navbar = () => {
                 </div>
 
                 <nav
-                    className={`bg-[#1b76e9] text-white p-8 w-full text-sm absolute transition-transform duration-300 ${
+                    className={`bg-[#1b76e9] text-white p-8 w-full text-sm absolute transition-transform duration-300 z-[999] ${
                         menuOpened ? "translate-x-0" : "translate-x-[-100%]"
                     }`}
                 >

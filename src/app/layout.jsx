@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className="font-inter">
                 <Navbar />
-                <main className="my-50">{children}</main>
+                <main className="space-y-20">{children}</main>
                 <Footer />
             </body>
         </html>

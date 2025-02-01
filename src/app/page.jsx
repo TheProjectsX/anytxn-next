@@ -8,6 +8,7 @@ import OurPhilosophySmall from "@/assets/images/our_philosophy_small.png";
 import { PiShareNetworkFill } from "react-icons/pi";
 import { FaLightbulb } from "react-icons/fa";
 import { FaMicrochip } from "react-icons/fa6";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Home = () => {
     const box1Ref = useRef(null);
@@ -24,7 +25,56 @@ const Home = () => {
     };
 
     return (
-        <div className="space-y-20">
+        <>
+            {/* Home Section */}
+            <section className="">
+                <div className="home-hero-container lg:h-[max(620px,_calc(92vh-49px))] h-auto relative w-full text-white overflow-hidden bg-blue-500 pt-[30%] md:pt-[20%] lg:pt-0 max-lg:pb-[15%] px-5">
+                    <div className="container max-width mx-auto flex h-full">
+                        <div className="lg:w-[60%] h-full flex flex-col justify-center">
+                            <h2 className="lg:max-w-max lg:whitespace-pre-line font-montserrat text-white text-[54px] lg:text-[80px] font-semibold leading-tight mb-6">
+                                Embrace the future of finance
+                            </h2>
+                            <p className="text-white font-montserrat max-w-[37rem] font-semibold mb-8">
+                                Reimagine financial services with AnyTech’s open
+                                platform, distributed banking solution that
+                                powers transformation
+                            </p>
+                            <button className="lg:w-fit lg:py-3.5 py-3 px-[42px] rounded-md bg-[#fe8b53] text-white flex items-center justify-center gap-2 z-[11] relative group cursor-pointer">
+                                <span className="font-semibold font-inter text-lg group-hover:-translate-x-1 transition-all duration-500">
+                                    Reach Out to Us
+                                </span>
+                                <IoIosArrowForward className="group-hover:translate-x-0.5 transition-all duration-500" />
+                            </button>
+                        </div>
+                        <div className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full home-hero-image pointer-events-none">
+                            <figure
+                                class="h-[115%] w-[115%] object-cover"
+                                style={{
+                                    transform: "translate3d(-12%, 0.002%, 0px)",
+                                    transition:
+                                        "transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                                }}
+                            >
+                                <img
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg"
+                                    alt="Home hero image"
+                                    className="w-full h-full object-cover"
+                                />
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div className="lg:hidden -mt-[14%] home-hero-container -z-10 relative">
+                    <figure>
+                        <img
+                            src="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg"
+                            alt="Home hero image"
+                            className="w-full h-full object-cover scale-150"
+                        />
+                    </figure>
+                </div>
+            </section>
+
             {/* POWERING THE FUTURE OF FINANCE */}
             <section className="container max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -510,7 +560,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 };
 

@@ -20,6 +20,40 @@
     font-family: "Montserrat", serif;
 }
 
+/* Home Design */
+.home-hero-container {
+    background: radial-gradient(
+        59.82% 121.73% at -9.66% 130.31%,
+        #00e9ea 0%,
+        #1f80f0 52.08%,
+        #005bc4 100%
+    );
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
+}
+
+/* Adjust for mid-sized screens */
+@media (max-width: 1280px) {
+    .home-hero-container {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+    }
+}
+
+/* Home hero image */
+.home-hero-image {
+    -webkit-clip-path: polygon(
+        67% 0,
+        100% 0,
+        100% 68%,
+        80% 100%,
+        0 100%,
+        32% 51%
+    );
+    clip-path: polygon(67% 0, 100% 0, 100% 68%, 80% 100%, 0 100%, 32% 51%);
+}
+
 /* Footer Designs */
 .bg-clip-cta {
     -webkit-clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
@@ -38,11 +72,6 @@
         -webkit-clip-path: polygon(0 0, 100% 45%, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 45%, 100% 100%, 0% 100%);
     }
-}
-
-.bg-mask {
-    -webkit-mask-image: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
-    mask-image: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
 }
 
 /* Class to hide scrollbar but allow scrolling */
