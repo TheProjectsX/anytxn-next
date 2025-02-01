@@ -25,6 +25,144 @@ const Home = () => {
 
     return (
         <div className="space-y-20">
+            {/* POWERING THE FUTURE OF FINANCE */}
+            <section className="container max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h2 className="text-base md:text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
+                        POWERING THE FUTURE OF FINANCE
+                    </h2>
+                    <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold mb-10 md:mb-5 md:leading-tight">
+                        Uncovering new ways to delight customers
+                    </h3>
+                    <div className="flex  md:hidden justify-center py-5">
+                        <div className="relative flex justify-center items-start h-fit w-[75%] mb-10">
+                            {/* Background Image */}
+                            <div className="absolute -top-20 left-0 right-0 -z-10 animate-[float_8s_ease-in-out_infinite]">
+                                <img
+                                    src="/powerOfFinance/background.svg"
+                                    alt="Background Image"
+                                />
+                            </div>
+
+                            {/* Foreground Image */}
+                            <div className="absolute -bottom-[5%] -right-5 z-10 animate-[float_8s_ease-in-out_infinite]">
+                                <img
+                                    src="/powerOfFinance/foreground.png"
+                                    alt="Background Image"
+                                />
+                            </div>
+
+                            {/* Main Image */}
+                            <figure class="relative w-[80%]">
+                                <img
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
+                                    alt="Image"
+                                    class="h-auto object-cover"
+                                />
+                                <figcaption class="sr-only">
+                                    Figure Image of Power the Future of Finance
+                                    Section
+                                </figcaption>
+                            </figure>
+
+                            {/* Floating Icons */}
+                            <div class="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
+                                <img
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
+                                    alt="Icon"
+                                    class="w-full"
+                                />
+                            </div>
+
+                            <div class="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
+                                <img
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
+                                    alt="Icon"
+                                    class="w-full"
+                                />
+                            </div>
+
+                            <div class="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
+                                <img
+                                    src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
+                                    alt="Icon"
+                                    class="w-full"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong className="block mb-4 text-[#164377] text-base">
+                            AnyTech is revolutionizing financial technology by
+                            introducing innovative and real-time transaction
+                            account processing capabilities, specifically
+                            designed for retail financial services.
+                        </strong>
+                        <p className="text-[#164377]">
+                            Our modern approach surpasses traditional banking
+                            and card processing systems, empowering you with the
+                            most advanced technology for lasting success.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="relative hidden md:flex justify-center items-start h-fit">
+                    {/* Background Image */}
+                    <div className="absolute -top-10 left-0 right-0 -z-10 animate-[float_8s_ease-in-out_infinite]">
+                        <img
+                            src="/powerOfFinance/background.svg"
+                            alt="Background Image"
+                        />
+                    </div>
+
+                    {/* Foreground Image */}
+                    <div className="absolute -bottom-12 -right-5 z-10 animate-[float_8s_ease-in-out_infinite]">
+                        <img
+                            src="/powerOfFinance/foreground.png"
+                            alt="Background Image"
+                        />
+                    </div>
+
+                    {/* Main Image */}
+                    <figure class="relative w-[75%]">
+                        <img
+                            src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
+                            alt="Image"
+                            class="h-auto object-cover"
+                        />
+                        <figcaption class="sr-only">
+                            Figure Image of Power the Future of Finance Section
+                        </figcaption>
+                    </figure>
+
+                    {/* Floating Icons */}
+                    <div class="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
+                        <img
+                            src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
+                            alt="Icon"
+                            class="w-full"
+                        />
+                    </div>
+
+                    <div class="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
+                        <img
+                            src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
+                            alt="Icon"
+                            class="w-full"
+                        />
+                    </div>
+
+                    <div class="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
+                        <img
+                            src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
+                            alt="Icon"
+                            class="w-full"
+                        />
+                    </div>
+                </div>
+            </section>
+
             {/* Our Philosophy */}
             <section className="container max-width mx-auto">
                 <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">

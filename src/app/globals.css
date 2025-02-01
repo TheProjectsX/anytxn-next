@@ -54,3 +54,28 @@
     -ms-overflow-style: none; /* Hides scrollbar in IE and Edge */
     scrollbar-width: none; /* Hides scrollbar in Firefox */
 }
+
+/* Float animation */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Custom delays */
+.delay-0 {
+    animation-delay: 0s;
+}
+.delay-1 {
+    animation-delay: 0.5s;
+}
+.delay-2 {
+    animation-delay: 1s;
+}
+.delay-3 {
+    animation-delay: 1.5s;
+}
