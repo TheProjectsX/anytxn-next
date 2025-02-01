@@ -160,7 +160,7 @@ const Navbar = () => {
             </header>
             {/* For Smaller Devices */}
             <header
-                className={`lg:hidden w-full transition-all duration-300 ease-in-out ${
+                className={`lg:hidden z-[999] w-full transition-all duration-300 ease-in-out ${
                     scrollingUp
                         ? scrollPercentage > 13
                             ? "fixed top-0"

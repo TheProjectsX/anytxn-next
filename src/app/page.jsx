@@ -34,7 +34,7 @@ const Home = () => {
                     The future of finance
                 </h3>
 
-                <div className="flex justify-evenly gap-3 flex-wrap mb-8">
+                <div className="hidden sm:flex justify-evenly gap-3 flex-wrap mb-8">
                     <button
                         className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
                         onClick={() => scrollToBox(box1Ref)}
@@ -61,11 +61,11 @@ const Home = () => {
                     </button>
                 </div>
 
-                <div className="relative w-full overflow-x-scroll shadow-2xl rounded-3xl no-scrollbar">
-                    <div className="flex w-[400%] transition-all duration-300 ease-in-out *:w-full">
+                <div className="relative w-full overflow-x-scroll rounded-3xl no-scrollbar">
+                    <div className="flex px-10 gap-x-20 w-[400%] transition-all duration-300 ease-in-out *:w-full">
                         {/* Item 01*/}
                         <div
-                            className="grid lg:grid-cols-2 grid-cols-1 lg:gap-[32px] lg:p-[64px] rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
+                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
                             ref={box1Ref}
                         >
                             <div>
@@ -90,25 +90,25 @@ const Home = () => {
                                     and product marketing opportunities.
                                 </p>
                             </div>
-                            <div className="rounded-3xl overflow-hidden">
+                            <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
                                     src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
                                     alt=""
-                                    className="lg:h-[425px] w-full object-cover"
+                                    className="h-full w-full object-cover"
                                 />
                             </div>
                         </div>
 
                         {/* Item 02*/}
                         <div
-                            className="grid lg:grid-cols-2 grid-cols-1 md:gap-[32px] lg:p-[64px] rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
+                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
                             ref={box2Ref}
                         >
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Agile and adaptable
                                 </h2>
-                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl md:text-3xl lg:text-5xl font-semibold mb-5">
+                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl lg:text-5xl font-semibold mb-5">
                                     Agile and adaptable for growth
                                 </h3>
 
@@ -128,25 +128,25 @@ const Home = () => {
                                     capabilities.
                                 </p>
                             </div>
-                            <div className="rounded-3xl overflow-hidden">
+                            <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
                                     src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
                                     alt=""
-                                    className="lg:h-[425px] w-full object-cover"
+                                    className="h-full w-full object-cover"
                                 />
                             </div>
                         </div>
 
                         {/* Item 03 */}
                         <div
-                            className="grid lg:grid-cols-2 grid-cols-1 md:gap-[32px] lg:p-[64px] rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
+                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
                             ref={box3Ref}
                         >
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Compliance ready
                                 </h2>
-                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl md:text-3xl lg:text-5xl font-semibold mb-5">
+                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl lg:text-5xl font-semibold mb-5">
                                     Manage compliance with ease
                                 </h3>
 
@@ -165,25 +165,25 @@ const Home = () => {
                                     banking and card payment systems.
                                 </p>
                             </div>
-                            <div className="rounded-3xl overflow-hidden">
+                            <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
                                     src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
                                     alt=""
-                                    className="lg:h-[425px] w-full object-cover"
+                                    className="h-full w-full object-cover"
                                 />
                             </div>
                         </div>
 
                         {/* Item 04*/}
                         <div
-                            className="grid lg:grid-cols-2 grid-cols-1 md:gap-[32px] lg:p-[64px] rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
+                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
                             ref={box4Ref}
                         >
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Secure and safe
                                 </h2>
-                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl md:text-3xl lg:text-5xl font-semibold mb-5">
+                                <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-lg sm:text-xl lg:text-5xl font-semibold mb-5">
                                     Highly secure and safe
                                 </h3>
 
@@ -202,11 +202,11 @@ const Home = () => {
                                     infrastructure.
                                 </p>
                             </div>
-                            <div className="rounded-3xl overflow-hidden">
+                            <div className="lg:h-[425px] rounded-3xl overflow-hidden">
                                 <img
                                     src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
                                     alt=""
-                                    className="lg:h-[425px] w-full object-cover"
+                                    className="h-full w-full object-cover"
                                 />
                             </div>
                         </div>
