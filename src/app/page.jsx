@@ -31,14 +31,6 @@ const Home = () => {
     const [futureOfFinanceSwiperIndex, setFutureOfFinanceSwiperIndex] =
         useState(0);
 
-    const addActive = (e) => {
-        e.target.parentElement.querySelectorAll("button").forEach((el) => {
-            el.classList.remove("active");
-        });
-
-        e.target.classList.add("active");
-    };
-
     return (
         <>
             {/* Home Section */}
@@ -660,82 +652,61 @@ const Home = () => {
             </div>
 
             {/* Trusted by the best */}
-            <section className="container max-width mx-auto">
-                <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-8">
-                    Trusted by the best
-                </h2>
-                <div
-                    className="flex flex-col lg:flex-row justify-between xl:px-20 mb-10 md:mb-14 lg:mb-28"
-                    ref={trustedByBestSectRef}
-                >
-                    <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
-                        <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
-                            &gt;
-                            {trustedByBestSectInView ? <CountUp end={20} /> : 0}
-                        </h4>
-                        <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
-                            Years of Experience
-                        </p>
-                    </div>
-                    <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
-                        <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
-                            {trustedByBestSectInView ? <CountUp end={40} /> : 0}
-                            +
-                        </h4>
-                        <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
-                            Financial Institutions
-                        </p>
-                    </div>
-                    <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
-                        <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
-                            &gt;
-                            {trustedByBestSectInView ? (
-                                <CountUp end={200} />
-                            ) : (
-                                0
-                            )}
-                            m
-                        </h4>
-                        <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
-                            Customers Each
-                        </p>
-                    </div>
-                </div>
-
-                <div className="hidden md:grid grid-cols-3 gap-x-16 gap-y-[34px] lg:grid-cols-5">
-                    {[
-                        "/partners/1.png",
-                        "/partners/2.png",
-                        "/partners/3.png",
-                        "/partners/4.png",
-                        "/partners/5.png",
-                        "/partners/6.png",
-                        "/partners/7.png",
-                        "/partners/8.png",
-                        "/partners/9.png",
-                        "/partners/10.png",
-                        "/partners/11.png",
-                        "/partners/12.png",
-                        "/partners/13.png",
-                        "/partners/14.png",
-                        "/partners/15.png",
-                    ].map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="flex h-full w-full items-center justify-center"
-                        >
-                            <img
-                                src={item}
-                                className="flex items-stretch bg-cover object-contain"
-                            />
+            <section>
+                <div className="container max-width mx-auto">
+                    <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-8">
+                        Trusted by the best
+                    </h2>
+                    <div
+                        className="flex flex-col lg:flex-row justify-between xl:px-20 mb-10 md:mb-14 lg:mb-28"
+                        ref={trustedByBestSectRef}
+                    >
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                &gt;
+                                {trustedByBestSectInView ? (
+                                    <CountUp end={20} />
+                                ) : (
+                                    0
+                                )}
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Years of Experience
+                            </p>
                         </div>
-                    ))}
-                </div>
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                {trustedByBestSectInView ? (
+                                    <CountUp end={40} />
+                                ) : (
+                                    0
+                                )}
+                                +
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Financial Institutions
+                            </p>
+                        </div>
+                        <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
+                            <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
+                                &gt;
+                                {trustedByBestSectInView ? (
+                                    <CountUp end={200} />
+                                ) : (
+                                    0
+                                )}
+                                m
+                            </h4>
+                            <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
+                                Customers Each
+                            </p>
+                        </div>
+                    </div>
 
-                <div className="md:hidden overflow-x-scroll slider-container">
-                    <div className="flex gap-4 w-max">
+                    <div className="hidden md:grid grid-cols-3 gap-x-16 gap-y-[34px] lg:grid-cols-5">
                         {[
                             "/partners/1.png",
+                            "/partners/2.png",
                             "/partners/3.png",
                             "/partners/4.png",
                             "/partners/5.png",
@@ -748,17 +719,55 @@ const Home = () => {
                             "/partners/12.png",
                             "/partners/13.png",
                             "/partners/14.png",
-                            "/partners/2.png",
                             "/partners/15.png",
                         ].map((item, idx) => (
-                            <img
+                            <div
                                 key={idx}
-                                src={item}
-                                className="flex items-stretch bg-cover object-contain w-20"
-                            />
+                                className="flex h-full w-full items-center justify-center"
+                            >
+                                <img
+                                    src={item}
+                                    className="flex items-stretch bg-cover object-contain"
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
+
+                <Swiper
+                    spaceBetween={30}
+                    slidesPerView={5}
+                    loop={true}
+                    className="md:!hidden"
+                >
+                    {[
+                        "/partners/1.png",
+                        "/partners/3.png",
+                        "/partners/4.png",
+                        "/partners/5.png",
+                        "/partners/6.png",
+                        "/partners/7.png",
+                        "/partners/8.png",
+                        "/partners/9.png",
+                        "/partners/10.png",
+                        "/partners/11.png",
+                        "/partners/12.png",
+                        "/partners/13.png",
+                        "/partners/14.png",
+                        "/partners/2.png",
+                        "/partners/15.png",
+                    ].map((item, idx) => (
+                        <SwiperSlide
+                            key={idx}
+                            className="!flex !h-auto items-center justify-center w-40"
+                        >
+                            <img
+                                src={item}
+                                className="flex items-stretch bg-cover object-contain"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </section>
         </>
     );
