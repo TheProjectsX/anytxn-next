@@ -10,6 +10,11 @@ import { FaLightbulb } from "react-icons/fa";
 import { FaMicrochip } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 
+import {
+    MouseParallaxChild,
+    MouseParallaxContainer,
+} from "react-parallax-mouse";
+
 const Home = () => {
     const box1Ref = useRef(null);
     const box2Ref = useRef(null);
@@ -48,7 +53,7 @@ const Home = () => {
                         </div>
                         <div className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full home-hero-image pointer-events-none">
                             <figure
-                                class="h-[115%] w-[115%] object-cover"
+                                className="h-[115%] w-[115%] object-cover"
                                 style={{
                                     transform: "translate3d(-12%, 0.002%, 0px)",
                                     transition:
@@ -63,7 +68,68 @@ const Home = () => {
                             </figure>
                         </div>
                     </div>
+
+                    <MouseParallaxContainer
+                        className="parallax hidden md:block"
+                        containerStyle={{
+                            width: "100%",
+                            height: "100%",
+                            position: "absolute",
+                            top: "0",
+                            scale: "1.1",
+                            zIndex: "10",
+                        }}
+                        globalFactorX={0.1}
+                        globalFactorY={0.1}
+                        resetOnLeave
+                    >
+                        {/* <MouseParallaxChild
+                            factorX={0.4}
+                            factorY={0.4}
+                            className="absolute top-10 -left-20 w-full h-full"
+                        >
+                            <img
+                                src="/backgrounds/WaveLinesDesktop1.svg"
+                                alt=""
+                            />
+                        </MouseParallaxChild> */}
+                        <MouseParallaxChild
+                            factorX={0.2}
+                            factorY={0.2}
+                            inverted
+                            className="absolute top-10 -left-20 w-full h-full"
+                        >
+                            <img
+                                src="/backgrounds/WaveLinesDesktop2.svg"
+                                alt=""
+                            />
+                        </MouseParallaxChild>
+                        <MouseParallaxChild
+                            factorX={0.3}
+                            factorY={0.3}
+                            className="absolute top-0 left-0 right-0 w-full h-full"
+                        >
+                            <img
+                                src="/backgrounds/WaveHomeHero.svg"
+                                alt=""
+                                className="w-full h-full object-cover"
+                            />
+                        </MouseParallaxChild>
+                        {/* <MouseParallaxChild
+                            factorX={0.15}
+                            factorY={0.15}
+                            inverted
+                            className="absolute top-0 right-0 w-full h-full"
+                        >
+                            <img
+                                src="/backgrounds/WaveLinesDesktop4.svg"
+                                alt=""
+                            />
+                        </MouseParallaxChild> */}
+                    </MouseParallaxContainer>
                 </div>
+
+                {/* For small devices */}
                 <div className="lg:hidden -mt-[14%] home-hero-container -z-10 relative">
                     <figure>
                         <img
@@ -103,40 +169,40 @@ const Home = () => {
                             </div>
 
                             {/* Main Image */}
-                            <figure class="relative w-[80%]">
+                            <figure className="relative w-[80%]">
                                 <img
                                     src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
                                     alt="Image"
-                                    class="h-auto object-cover"
+                                    className="h-auto object-cover"
                                 />
-                                <figcaption class="sr-only">
+                                <figcaption className="sr-only">
                                     Figure Image of Power the Future of Finance
                                     Section
                                 </figcaption>
                             </figure>
 
                             {/* Floating Icons */}
-                            <div class="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
+                            <div className="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
                                 <img
                                     src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
                                     alt="Icon"
-                                    class="w-full"
+                                    className="w-full"
                                 />
                             </div>
 
-                            <div class="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
+                            <div className="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
                                 <img
                                     src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
                                     alt="Icon"
-                                    class="w-full"
+                                    className="w-full"
                                 />
                             </div>
 
-                            <div class="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
+                            <div className="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
                                 <img
                                     src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
                                     alt="Icon"
-                                    class="w-full"
+                                    className="w-full"
                                 />
                             </div>
                         </div>
@@ -175,39 +241,39 @@ const Home = () => {
                     </div>
 
                     {/* Main Image */}
-                    <figure class="relative w-[75%]">
+                    <figure className="relative w-[75%]">
                         <img
                             src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
                             alt="Image"
-                            class="h-auto object-cover"
+                            className="h-auto object-cover"
                         />
-                        <figcaption class="sr-only">
+                        <figcaption className="sr-only">
                             Figure Image of Power the Future of Finance Section
                         </figcaption>
                     </figure>
 
                     {/* Floating Icons */}
-                    <div class="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
+                    <div className="absolute top-[10%] left-[12%] -translate-x-1/2 w-[min(73px,_18%)] animate-[float_3s_ease-in-out_infinite]">
                         <img
                             src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
                             alt="Icon"
-                            class="w-full"
+                            className="w-full"
                         />
                     </div>
 
-                    <div class="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
+                    <div className="absolute top-[30%] left-[20%] w-[min(87px,_20%)] animate-[float_3s_ease-in-out_infinite] delay-2">
                         <img
                             src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
                             alt="Icon"
-                            class="w-full"
+                            className="w-full"
                         />
                     </div>
 
-                    <div class="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
+                    <div className="absolute top-[10%] right-[12%] translate-x-1/2 w-[min(115px,_30%)] animate-[float_3s_ease-in-out_infinite] delay-1">
                         <img
                             src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
                             alt="Icon"
-                            class="w-full"
+                            className="w-full"
                         />
                     </div>
                 </div>

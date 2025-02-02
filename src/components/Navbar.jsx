@@ -20,12 +20,12 @@ const Navbar = () => {
         <>
             {/* For larger Devices */}
             <header
-                className={`hidden lg:flex z-[999] fixed w-full justify-center transition-all duration-300 ease-in-out ${
+                className={`hidden lg:flex z-[999] w-full justify-center transition-all duration-300 ease-in-out ${
                     scrollingUp ? "top-0" : "-top-25"
                 } ${
                     scrollPercentage > 10
-                        ? "bg-white text-[dodgerBlue] shadow-xl"
-                        : "bg-transparent text-white"
+                        ? "fixed bg-white text-[dodgerBlue] shadow-xl"
+                        : "absolute bg-transparent text-white"
                 }`}
             >
                 <div className="container max-width px-10 flex items-center justify-between gap-5 pt-5 pb-6 font-inter">
