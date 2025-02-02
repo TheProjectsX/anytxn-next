@@ -154,10 +154,10 @@ const Navbar = () => {
                                 : "bg-transparent hover:bg-white hover:text-[dodgerBlue]"
                         }`}
                     >
-                        <span className="font-semibold font-inter text-lg group-hover:-translate-x-1 transition-[translate] duration-500">
+                        <span className="font-semibold font-inter text-lg">
                             Contact Us
                         </span>
-                        <IoIosArrowForward className="group-hover:translate-x-0.5 transition-[translate] duration-500" />
+                        <IoIosArrowForward className="group-hover:translate-x-1 transition-[translate] duration-500" />
                     </button>
                 </div>
             </header>
@@ -290,8 +290,9 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <button className="w-full flex items-center justify-center gap-2 text-base font-semibold border border-white hover:shadow-lg cursor-pointer p-3 rounded-sm">
-                        Contact Us <IoIosArrowForward />
+                    <button className="w-full flex items-center justify-center gap-2 text-base font-semibold border border-white hover:shadow-lg cursor-pointer p-3 rounded-sm group">
+                        <span className="">Contact Us</span>
+                        <IoIosArrowForward className="group-hover:translate-x-1 transition-[translate] duration-500" />
                     </button>
                 </nav>
             </header>
