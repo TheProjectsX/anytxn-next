@@ -10,6 +10,8 @@ import { FaLightbulb } from "react-icons/fa";
 import { FaMicrochip } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 
+import { motion } from "framer-motion";
+
 import {
     MouseParallaxChild,
     MouseParallaxContainer,
@@ -150,6 +152,7 @@ const Home = () => {
                     <h3 className="whitespace-pre-line font-montserrat text-[#0b305b] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold mb-10 md:mb-5 md:leading-tight">
                         Uncovering new ways to delight customers
                     </h3>
+
                     <div className="flex  md:hidden justify-center py-5">
                         <div className="relative flex justify-center items-start h-fit w-[75%] mb-10">
                             {/* Background Image */}
@@ -300,9 +303,9 @@ const Home = () => {
                         className="md:hidden"
                     />
                 </div>
-                {/* #e9f3ff  #d6f8f8  #ffe1d5 */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                    {/* <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
                         <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
                             <PiShareNetworkFill />
                         </p>
@@ -314,9 +317,36 @@ const Home = () => {
                             banking and payment functions with our comprehensive
                             suite of solutions.
                         </p>
-                    </div>
+                    </div> */}
+                    <motion.div
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]"
+                    >
+                        <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
+                            <PiShareNetworkFill />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Full-suite solutions
+                        </h4>
+                        <p className="text-[#0b305b]">
+                            Experience the ease of integration across various
+                            banking and payment functions with our comprehensive
+                            suite of solutions.
+                        </p>
+                    </motion.div>
 
-                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                    <motion.div
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            ease: "easeOut",
+                            delay: 0.2,
+                        }}
+                        className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]"
+                    >
                         <p className="mb-6 bg-[#d6f8f8] rounded-full p-2 lg:p-3 w-fit text-xl">
                             <FaLightbulb />
                         </p>
@@ -328,8 +358,18 @@ const Home = () => {
                             financial operations by leveraging the power of AI,
                             Blockchain, Cloud Computing, and Big Data.
                         </p>
-                    </div>
-                    <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            ease: "easeOut",
+                            delay: 0.4,
+                        }}
+                        className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]"
+                    >
                         <p className="mb-6 bg-[#ffe1d5] rounded-full p-2 lg:p-3 w-fit text-xl">
                             <FaMicrochip />
                         </p>
@@ -341,7 +381,7 @@ const Home = () => {
                             resulting in an unparalleled fin tech experience for
                             financial institutions.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
