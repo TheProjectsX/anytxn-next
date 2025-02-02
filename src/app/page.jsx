@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import CountUp from "react-countup";
 import OurPhilosophyLarge from "@/assets/images/our_philosophy_large.png";
 import OurPhilosophySmall from "@/assets/images/our_philosophy_small.png";
@@ -22,23 +22,14 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Home = () => {
-    const box1Ref = useRef(null);
-    const box2Ref = useRef(null);
-    const box3Ref = useRef(null);
-    const box4Ref = useRef(null);
-
     const trustedByBestSectRef = useRef(null);
     const trustedByBestSectInView = useInView(trustedByBestSectRef, {
         once: true,
     });
 
-    const scrollToBox = (box) => {
-        box.current.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center",
-        });
-    };
+    const futureOfFinanceSwiperRef = useRef(null);
+    const [futureOfFinanceSwiperIndex, setFutureOfFinanceSwiperIndex] =
+        useState(0);
 
     const addActive = (e) => {
         e.target.parentElement.querySelectorAll("button").forEach((el) => {
@@ -396,8 +387,6 @@ const Home = () => {
                 <Swiper
                     spaceBetween={20}
                     slidesPerView={1.5}
-                    onSlideChange={() => console.log("slide change")}
-                    onSwiper={(swiper) => console.log(swiper)}
                     className="md:!hidden cursor-pointer"
                 >
                     <SwiperSlide className="bg-[#f8fcff] p-6 rounded-[20px] !h-auto">
@@ -453,7 +442,7 @@ const Home = () => {
             </div>
 
             {/* Technology built for you */}
-            <section className="container max-width mx-auto">
+            <section className="container max-width mx-auto overflow-hidden">
                 <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                     Technology built for you
                 </h2>
@@ -461,52 +450,64 @@ const Home = () => {
                     The future of finance
                 </h3>
 
+                {/* Swiper Controllers */}
                 <div className="hidden sm:flex justify-evenly gap-3 flex-wrap mb-8 [&_.active]:bg-[#b9d9ff]">
                     <button
-                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer active"
-                        onClick={(e) => {
-                            scrollToBox(box1Ref);
-                            addActive(e);
-                        }}
+                        className={`font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer ${
+                            futureOfFinanceSwiperIndex === 0 ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            futureOfFinanceSwiperRef.current?.slideTo(0)
+                        }
                     >
                         Customer Focused
                     </button>
                     <button
-                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={(e) => {
-                            scrollToBox(box2Ref);
-                            addActive(e);
-                        }}
+                        className={`font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer ${
+                            futureOfFinanceSwiperIndex === 1 ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            futureOfFinanceSwiperRef.current?.slideTo(1)
+                        }
                     >
                         Agile and Adaptable
                     </button>
                     <button
-                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={(e) => {
-                            scrollToBox(box3Ref);
-                            addActive(e);
-                        }}
+                        className={`font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer ${
+                            futureOfFinanceSwiperIndex === 2 ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            futureOfFinanceSwiperRef.current?.slideTo(2)
+                        }
                     >
                         Compliance Ready
                     </button>
                     <button
-                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={(e) => {
-                            scrollToBox(box4Ref);
-                            addActive(e);
-                        }}
+                        className={`font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer ${
+                            futureOfFinanceSwiperIndex === 3 ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            futureOfFinanceSwiperRef.current?.slideTo(3)
+                        }
                     >
                         Secure and Safe
                     </button>
                 </div>
 
-                <div className="relative w-full overflow-x-scroll overflow-y-visible rounded-3xl no-scrollbar pb-10">
-                    <div className="flex px-10 gap-x-20 w-[400%] transition-all duration-300 ease-in-out *:w-full">
-                        {/* Item 01*/}
-                        <div
-                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
-                            ref={box1Ref}
-                        >
+                <Swiper
+                    onSwiper={(swiper) =>
+                        (futureOfFinanceSwiperRef.current = swiper)
+                    }
+                    onSlideChange={(swiper) =>
+                        setFutureOfFinanceSwiperIndex(swiper.activeIndex)
+                    }
+                    spaceBetween={40}
+                    slidesPerView={1}
+                    className="flex transition-all duration-300 ease-in-out !overflow-visible !pb-15"
+                >
+                    {/* Item 01*/}
+                    <SwiperSlide className="!h-auto">
+                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-base lg:text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Customer Focused
@@ -537,12 +538,11 @@ const Home = () => {
                                 />
                             </div>
                         </div>
+                    </SwiperSlide>
 
-                        {/* Item 02*/}
-                        <div
-                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
-                            ref={box2Ref}
-                        >
+                    {/* Item 02*/}
+                    <SwiperSlide className="!h-auto">
+                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Agile and adaptable
@@ -575,12 +575,11 @@ const Home = () => {
                                 />
                             </div>
                         </div>
+                    </SwiperSlide>
 
-                        {/* Item 03 */}
-                        <div
-                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
-                            ref={box3Ref}
-                        >
+                    {/* Item 03 */}
+                    <SwiperSlide className="!h-auto">
+                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Compliance ready
@@ -612,12 +611,11 @@ const Home = () => {
                                 />
                             </div>
                         </div>
+                    </SwiperSlide>
 
-                        {/* Item 04*/}
-                        <div
-                            className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl mb-5 p-[24px] lg:h-[550px] bg-white"
-                            ref={box4Ref}
-                        >
+                    {/* Item 04*/}
+                    <SwiperSlide className="!h-auto">
+                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Secure and safe
@@ -649,8 +647,8 @@ const Home = () => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </section>
             {/* Section Bottom / Divider */}
             <div className="max-h-[240px] my-16 md:my-6 w-full min-h-[60px]">
