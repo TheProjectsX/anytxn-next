@@ -19,6 +19,8 @@ import {
     MouseParallaxContainer,
 } from "react-parallax-mouse";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
 const Home = () => {
     const box1Ref = useRef(null);
     const box2Ref = useRef(null);
@@ -318,20 +320,7 @@ const Home = () => {
                     />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* <div className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]">
-                        <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
-                            <PiShareNetworkFill />
-                        </p>
-                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
-                            Full-suite solutions
-                        </h4>
-                        <p className="text-[#0b305b]">
-                            Experience the ease of integration across various
-                            banking and payment functions with our comprehensive
-                            suite of solutions.
-                        </p>
-                    </div> */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
@@ -404,6 +393,55 @@ const Home = () => {
                         </p>
                     </motion.div>
                 </div>
+                <Swiper
+                    spaceBetween={20}
+                    slidesPerView={1.5}
+                    onSlideChange={() => console.log("slide change")}
+                    onSwiper={(swiper) => console.log(swiper)}
+                    className="md:!hidden cursor-pointer"
+                >
+                    <SwiperSlide className="bg-[#f8fcff] p-6 rounded-[20px] !h-auto">
+                        <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
+                            <PiShareNetworkFill />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Full-suite solutions
+                        </h4>
+                        <p className="text-[#0b305b] text-sm">
+                            Experience the ease of integration across various
+                            banking and payment functions with our comprehensive
+                            suite of solutions.
+                        </p>
+                    </SwiperSlide>
+
+                    <SwiperSlide className="bg-[#f8fcff] p-6 rounded-[20px] !h-auto">
+                        <p className="mb-6 bg-[#d6f8f8] rounded-full p-2 lg:p-3 w-fit text-xl">
+                            <FaLightbulb />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Simplify the complex
+                        </h4>
+                        <p className="text-[#0b305b] text-sm">
+                            Simplify complex processes and optimize your
+                            financial operations by leveraging the power of AI,
+                            Blockchain, Cloud Computing, and Big Data.
+                        </p>
+                    </SwiperSlide>
+
+                    <SwiperSlide className="bg-[#f8fcff] p-6 rounded-[20px] !h-auto">
+                        <p className="mb-6 bg-[#ffe1d5] rounded-full p-2 lg:p-3 w-fit text-xl">
+                            <FaMicrochip />
+                        </p>
+                        <h4 className="font-montserrat text-[#0b305b] text-lg lg:text-2xl font-semibold mb-5">
+                            Cutting-edge tech
+                        </h4>
+                        <p className="text-[#0b305b] text-sm">
+                            We seamlessly combine cutting-edge technologies,
+                            resulting in an unparalleled fin tech experience for
+                            financial institutions.
+                        </p>
+                    </SwiperSlide>
+                </Swiper>
             </section>
             {/* Section Bottom / Divider */}
             <div className="md:hidden max-h-[240px] my-16 md:my-6 w-full min-h-[60px]">
