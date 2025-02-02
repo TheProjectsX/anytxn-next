@@ -38,7 +38,7 @@ const Home = () => {
                 <div className="home-hero-container lg:h-[max(620px,_calc(92vh-49px))] h-auto relative w-full text-white overflow-hidden bg-blue-500 pt-[30%] md:pt-[20%] lg:pt-0 max-lg:pb-[15%] px-5">
                     <div className="container max-width mx-auto flex h-full">
                         <div className="lg:w-[60%] h-full flex flex-col justify-center z-30">
-                            <h2 className="lg:max-w-max lg:whitespace-pre-line font-montserrat text-white text-[54px] lg:text-[80px] font-semibold leading-tight mb-6">
+                            <h2 className="lg:max-w-max lg:whitespace-pre-line font-montserrat text-white text-5xl sm:text-[54px] lg:text-[80px] font-semibold leading-tight mb-6">
                                 Embrace the future of finance
                             </h2>
                             <p className="text-white font-montserrat max-w-[37rem] font-semibold mb-8">
@@ -77,6 +77,7 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg"
                                     alt="Home hero image"
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
                                 />
                             </motion.figure>
                         </div>
@@ -86,6 +87,7 @@ const Home = () => {
                         <img
                             src="/backgrounds/HomeHeroMobile.svg"
                             alt="Hero Image"
+                            loading="lazy"
                         />
                     </div>
 
@@ -112,7 +114,8 @@ const Home = () => {
                         >
                             <img
                                 src="/backgrounds/WaveLinesDesktop2.svg"
-                                alt=""
+                                alt="Background Image"
+                                loading="lazy"
                             />
                         </MouseParallaxChild>
                         <MouseParallaxChild
@@ -122,8 +125,9 @@ const Home = () => {
                         >
                             <img
                                 src="/backgrounds/WaveHomeHero.svg"
-                                alt=""
+                                alt="Background Image"
                                 className="w-full h-full object-cover"
+                                loading="lazy"
                             />
                         </MouseParallaxChild>
                     </MouseParallaxContainer>
@@ -158,6 +162,7 @@ const Home = () => {
                                 <img
                                     src="/powerOfFinance/background.svg"
                                     alt="Background Image"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -166,6 +171,7 @@ const Home = () => {
                                 <img
                                     src="/powerOfFinance/foreground.png"
                                     alt="Background Image"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -175,6 +181,7 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
                                     alt="Image"
                                     className="h-auto object-cover"
+                                    loading="lazy"
                                 />
                                 <figcaption className="sr-only">
                                     Figure Image of Power the Future of Finance
@@ -188,6 +195,7 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
                                     alt="Icon"
                                     className="w-full"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -196,6 +204,7 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
                                     alt="Icon"
                                     className="w-full"
+                                    loading="lazy"
                                 />
                             </div>
 
@@ -204,6 +213,7 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
                                     alt="Icon"
                                     className="w-full"
+                                    loading="lazy"
                                 />
                             </div>
                         </div>
@@ -230,6 +240,7 @@ const Home = () => {
                         <img
                             src="/powerOfFinance/background.svg"
                             alt="Background Image"
+                            loading="lazy"
                         />
                     </div>
 
@@ -238,6 +249,7 @@ const Home = () => {
                         <img
                             src="/powerOfFinance/foreground.png"
                             alt="Background Image"
+                            loading="lazy"
                         />
                     </div>
 
@@ -247,6 +259,7 @@ const Home = () => {
                             src="https://cdn.sanity.io/images/6jywt20u/production/5ca8af1a922b106b962c34781483bc8e6e066688-1124x1364.png?w=1124"
                             alt="Image"
                             className="h-auto object-cover"
+                            loading="lazy"
                         />
                         <figcaption className="sr-only">
                             Figure Image of Power the Future of Finance Section
@@ -259,6 +272,7 @@ const Home = () => {
                             src="https://cdn.sanity.io/images/6jywt20u/production/c544c6e75349fb440fc0938052f9288519c87bec-74x75.svg"
                             alt="Icon"
                             className="w-full"
+                            loading="lazy"
                         />
                     </div>
 
@@ -267,6 +281,7 @@ const Home = () => {
                             src="https://cdn.sanity.io/images/6jywt20u/production/f034c835798f95c1ce84f9c34ba48682b6383d06-89x88.svg"
                             alt="Icon"
                             className="w-full"
+                            loading="lazy"
                         />
                     </div>
 
@@ -275,6 +290,7 @@ const Home = () => {
                             src="https://cdn.sanity.io/images/6jywt20u/production/0f6c8e3f8d16b88978823d82126b03593266eb79-116x115.svg"
                             alt="Icon"
                             className="w-full"
+                            loading="lazy"
                         />
                     </div>
                 </div>
@@ -302,11 +318,13 @@ const Home = () => {
                         src={OurPhilosophyLarge.src}
                         alt="Our Philosophy"
                         className="hidden md:block"
+                        loading="lazy"
                     />
                     <img
                         src={OurPhilosophySmall.src}
                         alt="Our Philosophy"
                         className="md:hidden"
+                        loading="lazy"
                     />
                 </div>
 
@@ -437,6 +455,7 @@ const Home = () => {
                     src={SectionBottom.src}
                     alt="Section Bottom"
                     className="w-full"
+                    loading="lazy"
                 />
             </div>
 
@@ -506,7 +525,7 @@ const Home = () => {
                 >
                     {/* Item 01*/}
                     <SwiperSlide className="!h-auto">
-                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
+                        <article className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-base lg:text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Customer Focused
@@ -534,14 +553,15 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/c0be857dbe1878b1866b6bd0ddda7945d0f2779b-3672x2712.jpg"
                                     alt="Image"
                                     className="h-full w-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
-                        </div>
+                        </article>
                     </SwiperSlide>
 
                     {/* Item 02*/}
                     <SwiperSlide className="!h-auto">
-                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
+                        <article className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Agile and adaptable
@@ -571,14 +591,15 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/56e02fe1cf2f41ff52aebe65d2e1466e93a9581b-6400x4800.jpg"
                                     alt="Image"
                                     className="h-full w-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
-                        </div>
+                        </article>
                     </SwiperSlide>
 
                     {/* Item 03 */}
                     <SwiperSlide className="!h-auto">
-                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
+                        <article className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Compliance ready
@@ -607,14 +628,15 @@ const Home = () => {
                                     src="https://cdn.sanity.io/images/6jywt20u/production/2b48e3b3fe95abd21ff8cb659f26ca05d91e9ef7-1509x1284.png"
                                     alt="Image"
                                     className="h-full w-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
-                        </div>
+                        </article>
                     </SwiperSlide>
 
                     {/* Item 04*/}
                     <SwiperSlide className="!h-auto">
-                        <div className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
+                        <article className="h-full grid lg:grid-cols-2 grid-cols-1 gap-5 sm:gap-6 md:gap-8 lg:gap-[32px] lg:p-[64px] shadow-2xl rounded-3xl p-[24px] lg:h-[550px] bg-white">
                             <div>
                                 <h2 className="text-lg text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                                     Secure and safe
@@ -643,9 +665,10 @@ const Home = () => {
                                     src=" https://cdn.sanity.io/images/6jywt20u/production/912e8d76c36130d4ed0e39af1727dd0fe4fff570-10000x5000.jpg"
                                     alt=""
                                     className="h-full w-full object-cover"
+                                    loading="lazy"
                                 />
                             </div>
-                        </div>
+                        </article>
                     </SwiperSlide>
                 </Swiper>
             </section>
@@ -655,6 +678,7 @@ const Home = () => {
                     src={SectionBottom.src}
                     alt="Section Bottom"
                     className="w-full"
+                    loading="lazy"
                 />
             </div>
 
@@ -734,7 +758,9 @@ const Home = () => {
                             >
                                 <img
                                     src={item}
+                                    alt="Partner"
                                     className="flex items-stretch bg-cover object-contain"
+                                    loading="lazy"
                                 />
                             </div>
                         ))}
@@ -743,7 +769,7 @@ const Home = () => {
 
                 <Swiper
                     spaceBetween={30}
-                    slidesPerView={5}
+                    slidesPerView={3}
                     loop={true}
                     className="md:!hidden"
                 >
@@ -770,7 +796,9 @@ const Home = () => {
                         >
                             <img
                                 src={item}
+                                alt="Partner"
                                 className="flex items-stretch bg-cover object-contain"
+                                loading="lazy"
                             />
                         </SwiperSlide>
                     ))}
