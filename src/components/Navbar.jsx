@@ -247,47 +247,53 @@ const Navbar = () => {
 
                     <div className="mb-10 flex flex-col rounded-3xl border border-[#4699f8] w-fit mx-auto px-4">
                         <button
-                            className="uppercase py-2 w-full flex items-center gap-2 cursor-pointer"
+                            className="uppercase py-2 w-full flex items-center justify-between gap-2 cursor-pointer"
                             onClick={() =>
                                 setMenuLanguagesOpened((prev) => !prev)
                             }
                         >
-                            <FaGlobe />
-                            English
+                            <span className="flex gap-2 items-center">
+                                <FaGlobe />
+                                English
+                            </span>
                             <IoIosArrowDown />
                         </button>
 
                         <div
-                            className={`pl-6 mb-2 ${
-                                menuLanguagesOpened ? "block" : "hidden"
+                            className={`grid transition-all duration-300 ease-in-out ${
+                                menuLanguagesOpened
+                                    ? "grid-rows-[1fr]"
+                                    : "grid-rows-[0fr]"
                             }`}
                         >
-                            {[
-                                {
-                                    label: "English",
-                                    url: "/en",
-                                },
-                                {
-                                    label: "Thai",
-                                    url: "/th",
-                                },
-                                {
-                                    label: "Bahasa Indonesia",
-                                    url: "/id",
-                                },
-                                {
-                                    label: "Traditional Chinese",
-                                    url: "/tw",
-                                },
-                            ].map((item, idx) => (
-                                <a
-                                    key={idx}
-                                    href={item.url}
-                                    className="uppercase block py-2 "
-                                >
-                                    {item.label}
-                                </a>
-                            ))}
+                            <div className={`pl-6 overflow-hidden`}>
+                                {[
+                                    {
+                                        label: "English",
+                                        url: "/en",
+                                    },
+                                    {
+                                        label: "Thai",
+                                        url: "/th",
+                                    },
+                                    {
+                                        label: "Bahasa Indonesia",
+                                        url: "/id",
+                                    },
+                                    {
+                                        label: "Traditional Chinese",
+                                        url: "/tw",
+                                    },
+                                ].map((item, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={item.url}
+                                        className="uppercase block py-2 last-of-type:mb-2"
+                                    >
+                                        {item.label}
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
