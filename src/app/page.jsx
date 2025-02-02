@@ -5,12 +5,14 @@ import CountUp from "react-countup";
 import OurPhilosophyLarge from "@/assets/images/our_philosophy_large.png";
 import OurPhilosophySmall from "@/assets/images/our_philosophy_small.png";
 
+import SectionBottom from "@/assets/svg/section_bottom.svg";
+
 import { PiShareNetworkFill } from "react-icons/pi";
 import { FaLightbulb } from "react-icons/fa";
 import { FaMicrochip } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import {
     MouseParallaxChild,
@@ -23,6 +25,11 @@ const Home = () => {
     const box3Ref = useRef(null);
     const box4Ref = useRef(null);
 
+    const trustedByBestSectRef = useRef(null);
+    const trustedByBestSectInView = useInView(trustedByBestSectRef, {
+        once: true,
+    });
+
     const scrollToBox = (box) => {
         box.current.scrollIntoView({
             behavior: "smooth",
@@ -31,13 +38,21 @@ const Home = () => {
         });
     };
 
+    const addActive = (e) => {
+        e.target.parentElement.querySelectorAll("button").forEach((el) => {
+            el.classList.remove("active");
+        });
+
+        e.target.classList.add("active");
+    };
+
     return (
         <>
             {/* Home Section */}
-            <section className="">
+            <section className="mb-8">
                 <div className="home-hero-container lg:h-[max(620px,_calc(92vh-49px))] h-auto relative w-full text-white overflow-hidden bg-blue-500 pt-[30%] md:pt-[20%] lg:pt-0 max-lg:pb-[15%] px-5">
                     <div className="container max-width mx-auto flex h-full">
-                        <div className="lg:w-[60%] h-full flex flex-col justify-center">
+                        <div className="lg:w-[60%] h-full flex flex-col justify-center z-30">
                             <h2 className="lg:max-w-max lg:whitespace-pre-line font-montserrat text-white text-[54px] lg:text-[80px] font-semibold leading-tight mb-6">
                                 Embrace the future of finance
                             </h2>
@@ -53,24 +68,36 @@ const Home = () => {
                                 <IoIosArrowForward className="group-hover:translate-x-0.5 transition-all duration-500" />
                             </button>
                         </div>
-                        <div className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full home-hero-image pointer-events-none">
-                            <figure
-                                className="h-[115%] w-[115%] object-cover"
-                                style={{
-                                    transform: "translate3d(-12%, 0.002%, 0px)",
-                                    transition:
-                                        "transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                        <div // 0.5 second delay
+                            className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full home-hero-image pointer-events-none"
+                        >
+                            <motion.figure
+                                initial={{
+                                    transform: "translate3d(12%, 0.002%, 0px)",
+                                }} // Start position off-screen right
+                                animate={{
+                                    transform: "translate3d(0%, 0.002%, 0px)",
+                                }} // End position on-screen
+                                transition={{
+                                    duration: 0.5, // Duration of the transition
+                                    ease: [0.25, 0.46, 0.45, 0.94], // cubic-bezier timing function
+                                    delay: 0.5, // Add delay
                                 }}
+                                style={{
+                                    transform: "translate3d(12%, 0.002%, 0px)", // initial position
+                                }}
+                                className="h-[115%] w-[115%] object-cover"
                             >
                                 <img
                                     src="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg"
                                     alt="Home hero image"
                                     className="w-full h-full object-cover"
                                 />
-                            </figure>
+                            </motion.figure>
                         </div>
                     </div>
 
+                    {/* Parallax Animation */}
                     <MouseParallaxContainer
                         className="parallax hidden md:block"
                         containerStyle={{
@@ -85,16 +112,6 @@ const Home = () => {
                         globalFactorY={0.1}
                         resetOnLeave
                     >
-                        {/* <MouseParallaxChild
-                            factorX={0.4}
-                            factorY={0.4}
-                            className="absolute top-10 -left-20 w-full h-full"
-                        >
-                            <img
-                                src="/backgrounds/WaveLinesDesktop1.svg"
-                                alt=""
-                            />
-                        </MouseParallaxChild> */}
                         <MouseParallaxChild
                             factorX={0.2}
                             factorY={0.2}
@@ -117,17 +134,6 @@ const Home = () => {
                                 className="w-full h-full object-cover"
                             />
                         </MouseParallaxChild>
-                        {/* <MouseParallaxChild
-                            factorX={0.15}
-                            factorY={0.15}
-                            inverted
-                            className="absolute top-0 right-0 w-full h-full"
-                        >
-                            <img
-                                src="/backgrounds/WaveLinesDesktop4.svg"
-                                alt=""
-                            />
-                        </MouseParallaxChild> */}
                     </MouseParallaxContainer>
                 </div>
 
@@ -228,7 +234,7 @@ const Home = () => {
 
                 <div className="relative hidden md:flex justify-center items-start h-fit">
                     {/* Background Image */}
-                    <div className="absolute -top-10 left-0 right-0 -z-10 animate-[float_8s_ease-in-out_infinite]">
+                    <div className="absolute -top-14 left-0 right-0 -z-10 animate-[float_8s_ease-in-out_infinite]">
                         <img
                             src="/powerOfFinance/background.svg"
                             alt="Background Image"
@@ -281,9 +287,17 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            {/* Section Bottom / Divider */}
+            <div className="max-h-[240px] my-16 md:my-6 w-full min-h-[60px]">
+                <img
+                    src={SectionBottom.src}
+                    alt="Section Bottom"
+                    className="w-full"
+                />
+            </div>
 
             {/* Our Philosophy */}
-            <section className="container max-width mx-auto">
+            <section className="container max-width mx-auto md:mb-32">
                 <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-5">
                     Our Philosophy
                 </h2>
@@ -320,8 +334,13 @@ const Home = () => {
                     </div> */}
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.5,
+                            ease: "easeOut",
+                            delay: 0.1,
+                        }}
                         className="bg-[#f8fcff] p-6 md:p-8 rounded-[20px]"
                     >
                         <p className="mb-6 bg-[#e9f3ff] rounded-full p-2 lg:p-2.5 w-fit text-xl lg:text-2xl">
@@ -339,7 +358,8 @@ const Home = () => {
 
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
                         transition={{
                             duration: 0.5,
                             ease: "easeOut",
@@ -362,7 +382,8 @@ const Home = () => {
 
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
                         transition={{
                             duration: 0.5,
                             ease: "easeOut",
@@ -384,6 +405,14 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
+            {/* Section Bottom / Divider */}
+            <div className="md:hidden max-h-[240px] my-16 md:my-6 w-full min-h-[60px]">
+                <img
+                    src={SectionBottom.src}
+                    alt="Section Bottom"
+                    className="w-full"
+                />
+            </div>
 
             {/* Technology built for you */}
             <section className="container max-width mx-auto">
@@ -394,34 +423,46 @@ const Home = () => {
                     The future of finance
                 </h3>
 
-                <div className="hidden sm:flex justify-evenly gap-3 flex-wrap mb-8">
+                <div className="hidden sm:flex justify-evenly gap-3 flex-wrap mb-8 [&_.active]:bg-[#b9d9ff]">
                     <button
-                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={() => scrollToBox(box1Ref)}
+                        className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer active"
+                        onClick={(e) => {
+                            scrollToBox(box1Ref);
+                            addActive(e);
+                        }}
                     >
                         Customer Focused
                     </button>
                     <button
                         className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={() => scrollToBox(box2Ref)}
+                        onClick={(e) => {
+                            scrollToBox(box2Ref);
+                            addActive(e);
+                        }}
                     >
                         Agile and Adaptable
                     </button>
                     <button
                         className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={() => scrollToBox(box3Ref)}
+                        onClick={(e) => {
+                            scrollToBox(box3Ref);
+                            addActive(e);
+                        }}
                     >
                         Compliance Ready
                     </button>
                     <button
                         className="font-semibold xl:px-[48px] md:px-[38px] px-[28px] py-[6px] xl:py-[8px] rounded-[200px] transition-colors duration-300 undefined text-[#1f80f0] hover:bg-[#F5FAFF] text-lg cursor-pointer"
-                        onClick={() => scrollToBox(box4Ref)}
+                        onClick={(e) => {
+                            scrollToBox(box4Ref);
+                            addActive(e);
+                        }}
                     >
                         Secure and Safe
                     </button>
                 </div>
 
-                <div className="relative w-full overflow-x-scroll rounded-3xl no-scrollbar">
+                <div className="relative w-full overflow-x-scroll overflow-y-visible rounded-3xl no-scrollbar pb-10">
                     <div className="flex px-10 gap-x-20 w-[400%] transition-all duration-300 ease-in-out *:w-full">
                         {/* Item 01*/}
                         <div
@@ -573,17 +614,28 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            {/* Section Bottom / Divider */}
+            <div className="max-h-[240px] my-16 md:my-6 w-full min-h-[60px]">
+                <img
+                    src={SectionBottom.src}
+                    alt="Section Bottom"
+                    className="w-full"
+                />
+            </div>
 
             {/* Trusted by the best */}
             <section className="container max-width mx-auto">
                 <h2 className="text-lg text-center text-[#1f80f0] uppercase font-montserrat font-bold tracking-wider mb-8">
                     Trusted by the best
                 </h2>
-                <div className="flex flex-col lg:flex-row justify-between xl:px-20 mb-10 md:mb-14 lg:mb-28">
+                <div
+                    className="flex flex-col lg:flex-row justify-between xl:px-20 mb-10 md:mb-14 lg:mb-28"
+                    ref={trustedByBestSectRef}
+                >
                     <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
                         <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
                             &gt;
-                            <CountUp end={20} />
+                            {trustedByBestSectInView ? <CountUp end={20} /> : 0}
                         </h4>
                         <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
                             Years of Experience
@@ -591,7 +643,8 @@ const Home = () => {
                     </div>
                     <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
                         <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
-                            <CountUp end={40} />+
+                            {trustedByBestSectInView ? <CountUp end={40} /> : 0}
+                            +
                         </h4>
                         <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
                             Financial Institutions
@@ -600,7 +653,12 @@ const Home = () => {
                     <div className="flex items-center justify-between lg:flex-col py-6 border-b lg:border-none border-dashed border-[#b9d9ff]">
                         <h4 className="flex gap-1 text-4xl sm:text-6xl lg:text-[96px] font-montserrat tracking-wide font-semibold leading-none text-[#0057BB]/95">
                             &gt;
-                            <CountUp end={200} />m
+                            {trustedByBestSectInView ? (
+                                <CountUp end={200} />
+                            ) : (
+                                0
+                            )}
+                            m
                         </h4>
                         <p className="text-right text-[#151D2F] lg:text-center lg:text-lg lg:mt-[19px]">
                             Customers Each

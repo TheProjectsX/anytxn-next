@@ -148,13 +148,16 @@ const Navbar = () => {
                     </nav>
 
                     <button
-                        className={`flex items-center gap-3 px-6 py-3 border border-white font-semibold rounded-sm cursor-pointer text-lg transition-colors ${
+                        className={`flex group items-center gap-3 px-6 py-3 border border-white font-semibold rounded-sm cursor-pointer text-lg transition-colors ${
                             scrollPercentage > 10
                                 ? "bg-[#fe8b54] border-none text-white shadow hover:shadow-lg"
                                 : "bg-transparent hover:bg-white hover:text-[dodgerBlue]"
                         }`}
                     >
-                        Contact Us <IoIosArrowForward />
+                        <span className="font-semibold font-inter text-lg group-hover:-translate-x-1 transition-[translate] duration-500">
+                            Contact Us
+                        </span>
+                        <IoIosArrowForward className="group-hover:translate-x-0.5 transition-[translate] duration-500" />
                     </button>
                 </div>
             </header>
@@ -162,7 +165,7 @@ const Navbar = () => {
             <header
                 className={`lg:hidden z-[999] w-full transition-all duration-300 ease-in-out ${
                     scrollingUp
-                        ? scrollPercentage > 13
+                        ? scrollPercentage > 10
                             ? "fixed top-0"
                             : "static"
                         : "fixed -top-25"
@@ -185,7 +188,7 @@ const Navbar = () => {
                 </div>
 
                 <nav
-                    className={`bg-[#1b76e9] text-white p-8 w-full text-sm absolute transition-transform duration-300 z-[999] ${
+                    className={`bg-[#1b76e9] text-white p-8 w-full text-sm absolute transition-transform duration-200 z-[999] ${
                         menuOpened ? "translate-x-0" : "translate-x-[-100%]"
                     }`}
                 >
