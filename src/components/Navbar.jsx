@@ -21,7 +21,7 @@ const Navbar = () => {
             {/* For larger Devices */}
             <header
                 className={`hidden lg:flex z-[999] w-full justify-center transition-all duration-300 ease-in-out ${
-                    scrollingUp ? "top-0" : "-top-25"
+                    scrollingUp ? "top-0" : "-top-24"
                 } ${
                     scrollPercentage > 10
                         ? "fixed bg-white text-[dodgerBlue] shadow-xl"
@@ -147,7 +147,8 @@ const Navbar = () => {
                         </div>
                     </nav>
 
-                    <button
+                    <a
+                        href="#"
                         className={`flex group items-center gap-3 px-6 py-3 border border-white font-semibold rounded-sm cursor-pointer text-lg transition-colors ${
                             scrollPercentage > 10
                                 ? "bg-[#fe8b54] border-none text-white shadow hover:shadow-lg"
@@ -158,7 +159,7 @@ const Navbar = () => {
                             Contact Us
                         </span>
                         <IoIosArrowForward className="group-hover:translate-x-1 transition-[translate] duration-500" />
-                    </button>
+                    </a>
                 </div>
             </header>
             {/* For Smaller Devices */}
@@ -168,7 +169,7 @@ const Navbar = () => {
                         ? scrollPercentage > 10
                             ? "fixed top-0"
                             : "static"
-                        : "fixed -top-25"
+                        : "fixed -top-24"
                 }`}
             >
                 <div className="bg-[#1f80f0] flex">
@@ -246,7 +247,7 @@ const Navbar = () => {
 
                     <div className="mb-10 flex flex-col rounded-3xl border border-[#4699f8] w-fit mx-auto px-4">
                         <button
-                            className="uppercase py-2 w-fit flex items-center gap-2 cursor-pointer"
+                            className="uppercase py-2 w-full flex items-center gap-2 cursor-pointer"
                             onClick={() =>
                                 setMenuLanguagesOpened((prev) => !prev)
                             }
@@ -290,10 +291,13 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <button className="w-full flex items-center justify-center gap-2 text-base font-semibold border border-white hover:shadow-lg cursor-pointer p-3 rounded-sm group">
+                    <a
+                        href="#"
+                        className="w-full flex items-center justify-center gap-2 text-base font-semibold border border-white hover:shadow-lg cursor-pointer p-3 rounded-sm group"
+                    >
                         <span className="">Contact Us</span>
                         <IoIosArrowForward className="group-hover:translate-x-1 transition-[translate] duration-500" />
-                    </button>
+                    </a>
                 </nav>
             </header>
         </>

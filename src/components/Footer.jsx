@@ -74,12 +74,15 @@ const Footer = () => {
                             organization for the future
                         </p>
 
-                        <button className="w-full lg:w-auto lg:py-3.5 py-3 px-[42px] rounded-md bg-[#fe8b53] text-white flex items-center justify-center gap-2 false z-[11] relative group cursor-pointer">
+                        <a
+                            href="#"
+                            className="w-full lg:w-auto lg:py-3.5 py-3 px-[42px] rounded-md bg-[#fe8b53] text-white flex items-center justify-center gap-2 false z-[11] relative group cursor-pointer"
+                        >
                             <span className="font-semibold font-inter text-lg group-hover:-translate-x-1 transition-all duration-500">
                                 Contact Us
                             </span>
                             <IoIosArrowForward className="group-hover:translate-x-0.5 transition-all duration-500" />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

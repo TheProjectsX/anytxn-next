@@ -46,12 +46,15 @@ const Home = () => {
                                 platform, distributed banking solution that
                                 powers transformation
                             </p>
-                            <button className="lg:w-fit lg:py-3.5 py-3 px-[42px] rounded-md bg-[#fe8b53] text-white flex items-center justify-center gap-2 z-[11] relative group cursor-pointer">
+                            <a
+                                href="#"
+                                className="lg:w-fit lg:py-3.5 py-3 px-[42px] rounded-md bg-[#fe8b53] text-white flex items-center justify-center gap-2 z-[11] relative group cursor-pointer"
+                            >
                                 <span className="font-semibold font-inter text-lg group-hover:-translate-x-1 transition-all duration-500">
                                     Reach Out to Us
                                 </span>
                                 <IoIosArrowForward className="group-hover:translate-x-0.5 transition-all duration-500" />
-                            </button>
+                            </a>
                         </div>
                         <div // 0.5 second delay
                             className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full home-hero-image pointer-events-none"

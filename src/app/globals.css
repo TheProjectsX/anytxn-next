@@ -1,13 +1,19 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .max-width {
     padding-inline: 20px;
+}
 
-    @media (width >= 80rem /* 1280px */) {
+@media (width >= 80rem /* 1280px */) {
+    .max-width {
         max-width: 1200px !important;
     }
+}
 
-    @media (width >= 64rem /* 1280px */) {
+@media (width >= 64rem /* 1280px */) {
+    .max-width {
         padding-inline: 25px;
     }
 }
@@ -108,7 +114,3 @@
 .delay-3 {
     animation-delay: 1.5s;
 }
-
-/* * {
-    outline: 2px solid red !important;
-} */
